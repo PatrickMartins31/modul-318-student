@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SwissTransport;
 
-namespace SwisstransporterGUI
+namespace Swisstransport
 {
     public partial class Fahrplan : UserControl
     {
@@ -19,7 +20,7 @@ namespace SwisstransporterGUI
 
         private void Fahrplan_Load(object sender, EventArgs e)
         {
- 
+            
         }
     }
 }

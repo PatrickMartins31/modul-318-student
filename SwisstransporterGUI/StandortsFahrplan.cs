@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SwisstransporterGUI
+namespace Swisstransport
 {
     public partial class StandortsFahrplan : UserControl
     {

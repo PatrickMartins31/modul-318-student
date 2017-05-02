@@ -1,4 +1,4 @@
-﻿namespace SwisstransporterGUI
+﻿namespace Swisstransport
 {
     partial class StandortsFahrplan
     {
