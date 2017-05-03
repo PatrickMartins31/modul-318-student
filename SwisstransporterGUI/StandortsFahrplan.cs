@@ -12,12 +12,13 @@ namespace Swisstransport
 {
     public partial class StandortsFahrplan : UserControl
     {
+        
         public StandortsFahrplan()
         {
             InitializeComponent();
         }
 
-        private void StandortsFahrplan_Load(object sender, EventArgs e)
+        private void CbStandort_TextUpdate(object sender, EventArgs e)
         {
 
         }

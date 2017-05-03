@@ -17,6 +17,10 @@ namespace SwissTransport
 
     public class Station
     {
+        public override string ToString()
+        {
+            return Name;
+        }
         [JsonProperty("id")]
         public string Id { get; set; }
 

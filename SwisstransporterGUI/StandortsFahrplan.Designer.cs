@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.CbStandort = new System.Windows.Forms.ComboBox();
+            this.StandortsFahrplanListbox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // CbStandort
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(86, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.CbStandort.FormattingEnabled = true;
+            this.CbStandort.Location = new System.Drawing.Point(86, 90);
+            this.CbStandort.Name = "CbStandort";
+            this.CbStandort.Size = new System.Drawing.Size(121, 21);
+            this.CbStandort.TabIndex = 0;
+            this.CbStandort.TextUpdate += new System.EventHandler(this.CbStandort_TextUpdate);
             // 
-            // listBox1
+            // StandortsFahrplanListbox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(213, 89);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(227, 121);
-            this.listBox1.TabIndex = 1;
+            this.StandortsFahrplanListbox.FormattingEnabled = true;
+            this.StandortsFahrplanListbox.Location = new System.Drawing.Point(213, 89);
+            this.StandortsFahrplanListbox.Name = "StandortsFahrplanListbox";
+            this.StandortsFahrplanListbox.Size = new System.Drawing.Size(227, 121);
+            this.StandortsFahrplanListbox.TabIndex = 1;
             // 
             // label1
             // 
@@ -75,11 +76,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.StandortsFahrplanListbox);
+            this.Controls.Add(this.CbStandort);
             this.Name = "StandortsFahrplan";
             this.Size = new System.Drawing.Size(442, 233);
-            this.Load += new System.EventHandler(this.StandortsFahrplan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,8 +87,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ComboBox CbStandort;
+        private System.Windows.Forms.ListBox StandortsFahrplanListbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
