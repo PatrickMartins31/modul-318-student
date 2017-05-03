@@ -24,12 +24,14 @@ namespace Swisstransport
         {
             PanelFahrplan.Controls.Clear();
             PanelFahrplan.Controls.Add(Fahrplan);
+            
         }
 
         private void StandortsFahrplanBtn_Click(object sender, EventArgs e)
         {
             PanelFahrplan.Controls.Clear();
             PanelFahrplan.Controls.Add(StandortsFahrplan);
+            
         }
     }
 }

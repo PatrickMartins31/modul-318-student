@@ -49,7 +49,7 @@ namespace Swisstransport
             {
                 DateTime departure = Convert.ToDateTime(Station.Stop.Departure);
                 string departuretime = departure.ToShortTimeString();
-                StandortsFahrplanListbox.Items.Add(Station.Name + '\t' + Station.To + " | " + Station.Stop.Departure);
+                StandortsFahrplanListbox.Items.Add(Station.Name + '\t' + Station.To + " | " + departuretime);
             }
         }
     }

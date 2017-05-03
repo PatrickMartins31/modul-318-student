@@ -56,9 +56,17 @@ namespace Swisstransport
         {
             Connections Connection = new Connections();
             Connection = _trans.GetConnections(CbAbfahrtsOrt.Text, CbAnkunftsort.Text);
-            ConnectionTableListbox.Items.Clear();
-            foreach(Connection Connect in Connection.ConnectionList)
+            FahrplanListView.Items.Clear();
+            FahrplanListView.Columns.Add("",0);
+            FahrplanListView.Columns.Add("From", 110);
+            FahrplanListView.Columns.Add("To", 110);
+            FahrplanListView.Columns.Add("Departure",110);
+            FahrplanListView.Columns.Add("Arrival",110);
+            FahrplanListView.Columns.Add("Duration", 110);
+
+            foreach (Connection Connect in Connection.ConnectionList)
             {
+                ListViewItem Item1 = new ListViewItem("");
                 DateTime departure = Convert.ToDateTime(Connect.From.Departure);
                 string departureTime = departure.ToShortTimeString();
 
@@ -66,8 +74,13 @@ namespace Swisstransport
                 string arrivalTime = arrival.ToShortTimeString();
 
                 string[] duration = Connect.Duration.Split('d')[1].Split(':');
-                ConnectionTableListbox.Items.Add(Connect.From.Station.Name + " - " + Connect.To.Station.Name + '\t' + departureTime + "-" + arrivalTime + '\t' + duration [0] + ":" + duration [1]);
-                ConnectionTableListbox.Items.Add("");
+                Item1.SubItems.Add(Connect.From.Station.Name);
+                Item1.SubItems.Add(Connect.To.Station.Name);
+                Item1.SubItems.Add(departureTime);
+                Item1.SubItems.Add(arrivalTime);
+                Item1.SubItems.Add(duration [0] + ":" + duration[1]);
+                FahrplanListView.Items.Add(Item1);
+                FahrplanListView.View = View.Details;
             }
         }
     }

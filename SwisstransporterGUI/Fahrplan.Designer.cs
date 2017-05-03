@@ -31,11 +31,11 @@
             this.CbAbfahrtsOrt = new System.Windows.Forms.ComboBox();
             this.CbAnkunftsort = new System.Windows.Forms.ComboBox();
             this.SuchenBtn = new System.Windows.Forms.Button();
-            this.ConnectionTableListbox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Datum = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.FahrplanListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // CbAbfahrtsOrt
@@ -65,14 +65,6 @@
             this.SuchenBtn.Text = "Suchen";
             this.SuchenBtn.UseVisualStyleBackColor = true;
             this.SuchenBtn.Click += new System.EventHandler(this.SuchenBtn_Click);
-            // 
-            // ConnectionTableListbox
-            // 
-            this.ConnectionTableListbox.FormattingEnabled = true;
-            this.ConnectionTableListbox.Location = new System.Drawing.Point(42, 198);
-            this.ConnectionTableListbox.Name = "ConnectionTableListbox";
-            this.ConnectionTableListbox.Size = new System.Drawing.Size(557, 121);
-            this.ConnectionTableListbox.TabIndex = 3;
             // 
             // label1
             // 
@@ -112,15 +104,23 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Fahrplan";
             // 
+            // FahrplanListView
+            // 
+            this.FahrplanListView.Location = new System.Drawing.Point(43, 199);
+            this.FahrplanListView.Name = "FahrplanListView";
+            this.FahrplanListView.Size = new System.Drawing.Size(556, 130);
+            this.FahrplanListView.TabIndex = 8;
+            this.FahrplanListView.UseCompatibleStateImageBehavior = false;
+            // 
             // Fahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.FahrplanListView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Datum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ConnectionTableListbox);
             this.Controls.Add(this.SuchenBtn);
             this.Controls.Add(this.CbAnkunftsort);
             this.Controls.Add(this.CbAbfahrtsOrt);
@@ -137,10 +137,10 @@
         private System.Windows.Forms.ComboBox CbAbfahrtsOrt;
         private System.Windows.Forms.ComboBox CbAnkunftsort;
         private System.Windows.Forms.Button SuchenBtn;
-        private System.Windows.Forms.ListBox ConnectionTableListbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker Datum;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListView FahrplanListView;
     }
 }
