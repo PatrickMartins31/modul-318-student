@@ -28,7 +28,7 @@ namespace Swisstransport
         {
             SearchStations(CbAbfahrtsOrt);
         }
-        //Sucht Stationen 
+        //Sucht Stationen in der ComboBox  
         private void SearchStations(ComboBox cb)
         {
             string query = cb.Text;
@@ -66,7 +66,7 @@ namespace Swisstransport
                 string arrivalTime = arrival.ToShortTimeString();
 
                 string[] duration = Connect.Duration.Split('d')[1].Split(':');
-                ConnectionTableListbox.Items.Add(Connect.From.Station.Name + " - " + Connect.To.Station.Name + " | " + departureTime + " | " + arrivalTime + " | " + duration [0] + ":" + duration [1]);
+                ConnectionTableListbox.Items.Add(Connect.From.Station.Name + " - " + Connect.To.Station.Name + '\t' + departureTime + "-" + arrivalTime + '\t' + duration [0] + ":" + duration [1]);
                 ConnectionTableListbox.Items.Add("");
             }
         }
