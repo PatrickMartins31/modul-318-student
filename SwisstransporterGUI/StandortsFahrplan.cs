@@ -47,7 +47,7 @@ namespace Swisstransport
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="SFpE"></param>
+        /// <param name="StandortsFahrplanListView"></param>
         private void StandortsFahrplaEingaben(ListView StandortsFahrplanListView)
         {
             StationBoardRoot StationBoardRoot = new StationBoardRoot();
