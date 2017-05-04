@@ -26,7 +26,16 @@ namespace Swisstransport
 
         private void CbAbfahrtsOrt_TextUpdate(object sender, EventArgs e)
         {
-            SearchStations(CbAbfahrtsOrt);
+            try
+            {
+              SearchStations(CbAbfahrtsOrt); 
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Schreiben Sie Langsamer");
+                CbAbfahrtsOrt.Text += "";
+            }
+            
         }
         /// <summary>
         /// Sucht Stationen in der ComboBox aber erst ab dem man 3 Buchstaben in die Combobox eingegeben hat.
@@ -44,6 +53,7 @@ namespace Swisstransport
                 cb.DroppedDown = true;
                 foreach (Station Stat in Stations.StationList)
                 {
+                    
                     cb.Items.Add(Stat);
                 }
             }
@@ -51,7 +61,17 @@ namespace Swisstransport
 
         private void CbAnkunftsort_TextUpdate(object sender, EventArgs e)
         {
-            SearchStations(CbAnkunftsort);
+            try
+            {
+                SearchStations(CbAnkunftsort);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Schreiben Sie Langsamer");
+                CbAnkunftsort.Text += "";
+            }
+
+            
         }
         /// <summary>
         /// Ist die Methode für den SearchBtn die dann die ListViewItems in die ListView einfügt.
