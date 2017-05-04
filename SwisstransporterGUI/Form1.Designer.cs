@@ -38,7 +38,7 @@
             // 
             // FahrplanBtn
             // 
-            this.FahrplanBtn.BackColor = System.Drawing.Color.Turquoise;
+            this.FahrplanBtn.BackColor = System.Drawing.Color.MintCream;
             this.FahrplanBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FahrplanBtn.BackgroundImage")));
             this.FahrplanBtn.Location = new System.Drawing.Point(495, 37);
             this.FahrplanBtn.Name = "FahrplanBtn";
@@ -53,6 +53,7 @@
             this.PanelFahrplan.Name = "PanelFahrplan";
             this.PanelFahrplan.Size = new System.Drawing.Size(698, 345);
             this.PanelFahrplan.TabIndex = 1;
+            this.PanelFahrplan.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelFahrplan_Paint);
             // 
             // StandortsFahrplanBtn
             // 

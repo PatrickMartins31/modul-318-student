@@ -86,7 +86,7 @@
             // 
             // Datum
             // 
-            this.Datum.CustomFormat = "dd.MM.yyyy";
+            this.Datum.CustomFormat = "dd.MM.yyyy || HH.mm";
             this.Datum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Datum.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Datum.Location = new System.Drawing.Point(43, 172);

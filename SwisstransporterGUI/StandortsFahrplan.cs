@@ -13,16 +13,20 @@ namespace Swisstransport
 {
     public partial class StandortsFahrplan : UserControl
     {
+        public ITransport _transporter = new Transport();
         public StandortsFahrplan()
         {
             InitializeComponent();
         }
-        public ITransport _transporter = new Transport();
-
+        
         private void CbStandort_TextUpdate(object sender, EventArgs e)
         {
             SearchStations(CbStandort);
         }
+        /// <summary>
+        /// Sucht die Station in der Combobox
+        /// </summary>
+        /// <param name="cb"></param>
         private void SearchStations(ComboBox cb)
         {
             string query = cb.Text;
@@ -40,17 +44,40 @@ namespace Swisstransport
                 }
             }
         }
-
-        private void StandortSucheBtn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="SFpE"></param>
+        private void StandortsFahrplaEingaben(ListView StandortsFahrplanListView)
         {
             StationBoardRoot StationBoardRoot = new StationBoardRoot();
             StationBoardRoot = _transporter.GetStationBoard(CbStandort.Text, CbStandort.Text);
-            foreach(StationBoard Station in StationBoardRoot.Entries)
+            if (StandortsFahrplanListView.Columns.Count == 0)
+            {
+                StandortsFahrplanListView.Columns.Add("", 0);
+                StandortsFahrplanListView.Columns.Add("ÖV Bezeichnung", 110);
+                StandortsFahrplanListView.Columns.Add("Nach", 110);
+                StandortsFahrplanListView.Columns.Add("Abfahrtszeit", 110);
+            }
+            StandortsFahrplanListView.Items.Clear();
+            foreach (StationBoard Station in StationBoardRoot.Entries)
             {
                 DateTime departure = Convert.ToDateTime(Station.Stop.Departure);
-                string departuretime = departure.ToShortTimeString();
-                StandortsFahrplanListbox.Items.Add(Station.Name + '\t' + Station.To + " | " + departuretime);
+                string departureTime = departure.ToShortTimeString();
+                ListViewItem Item1 = new ListViewItem("");
+
+                Item1.SubItems.Add(Station.Name);
+                Item1.SubItems.Add(Station.To);
+                Item1.SubItems.Add(departureTime);
+                StandortsFahrplanListView.Items.Add(Item1);
+                StandortsFahrplanListView.View = View.Details;
             }
+        }
+
+        private void StandortSucheBtn_Click(object sender, EventArgs e)
+        {
+            StandortsFahrplaEingaben(StandortsFahrplanListView);
+            
         }
     }
 }

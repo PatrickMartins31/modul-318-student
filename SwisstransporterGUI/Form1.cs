@@ -33,5 +33,10 @@ namespace Swisstransport
             PanelFahrplan.Controls.Add(StandortsFahrplan);
             
         }
+
+        private void PanelFahrplan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

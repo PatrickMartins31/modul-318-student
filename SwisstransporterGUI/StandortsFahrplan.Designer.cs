@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.CbStandort = new System.Windows.Forms.ComboBox();
-            this.StandortsFahrplanListbox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.StandortSucheBtn = new System.Windows.Forms.Button();
+            this.StandortsFahrplanListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // CbStandort
@@ -43,14 +43,6 @@
             this.CbStandort.Size = new System.Drawing.Size(121, 21);
             this.CbStandort.TabIndex = 0;
             this.CbStandort.TextUpdate += new System.EventHandler(this.CbStandort_TextUpdate);
-            // 
-            // StandortsFahrplanListbox
-            // 
-            this.StandortsFahrplanListbox.FormattingEnabled = true;
-            this.StandortsFahrplanListbox.Location = new System.Drawing.Point(213, 89);
-            this.StandortsFahrplanListbox.Name = "StandortsFahrplanListbox";
-            this.StandortsFahrplanListbox.Size = new System.Drawing.Size(383, 121);
-            this.StandortsFahrplanListbox.TabIndex = 1;
             // 
             // label1
             // 
@@ -81,14 +73,22 @@
             this.StandortSucheBtn.UseVisualStyleBackColor = true;
             this.StandortSucheBtn.Click += new System.EventHandler(this.StandortSucheBtn_Click);
             // 
+            // StandortsFahrplanListView
+            // 
+            this.StandortsFahrplanListView.Location = new System.Drawing.Point(212, 90);
+            this.StandortsFahrplanListView.Name = "StandortsFahrplanListView";
+            this.StandortsFahrplanListView.Size = new System.Drawing.Size(387, 103);
+            this.StandortsFahrplanListView.TabIndex = 5;
+            this.StandortsFahrplanListView.UseCompatibleStateImageBehavior = false;
+            // 
             // StandortsFahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.StandortsFahrplanListView);
             this.Controls.Add(this.StandortSucheBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.StandortsFahrplanListbox);
             this.Controls.Add(this.CbStandort);
             this.Name = "StandortsFahrplan";
             this.Size = new System.Drawing.Size(599, 235);
@@ -100,9 +100,9 @@
         #endregion
 
         private System.Windows.Forms.ComboBox CbStandort;
-        private System.Windows.Forms.ListBox StandortsFahrplanListbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button StandortSucheBtn;
+        private System.Windows.Forms.ListView StandortsFahrplanListView;
     }
 }
