@@ -98,16 +98,16 @@ namespace Swisstransport
             {
                 ListViewItem Item1 = new ListViewItem("");
                 DateTime departure = Convert.ToDateTime(Connect.From.Departure);
-                string departureTime = departure.ToShortTimeString();
+                string departuretime = departure.ToShortTimeString();
 
                 DateTime arrival = Convert.ToDateTime(Connect.To.Arrival);
-                string arrivalTime = arrival.ToShortTimeString();
+                string arrivaltime = arrival.ToShortTimeString();
 
                 string[] duration = Connect.Duration.Split('d')[1].Split(':');
                 Item1.SubItems.Add(Connect.From.Station.Name);
                 Item1.SubItems.Add(Connect.To.Station.Name);
-                Item1.SubItems.Add(departureTime);
-                Item1.SubItems.Add(arrivalTime);
+                Item1.SubItems.Add(departuretime);
+                Item1.SubItems.Add(arrivaltime);
                 Item1.SubItems.Add(duration [0] + ":" + duration[1]);
                 FahrplanListView.Items.Add(Item1);
                 FahrplanListView.View = View.Details;

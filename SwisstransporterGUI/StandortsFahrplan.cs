@@ -45,7 +45,7 @@ namespace Swisstransport
             }
         }
         /// <summary>
-        /// 
+        /// Ist die Methode für den StandortSucheBtn das die Items dann in die StandortsFahrplanListView einfügt
         /// </summary>
         /// <param name="StandortsFahrplanListView"></param>
         private void StandortsFahrplaEingaben(ListView StandortsFahrplanListView)
@@ -63,12 +63,12 @@ namespace Swisstransport
             foreach (StationBoard Station in StationBoardRoot.Entries)
             {
                 DateTime departure = Convert.ToDateTime(Station.Stop.Departure);
-                string departureTime = departure.ToShortTimeString();
+                string departuretime = departure.ToShortTimeString();
                 ListViewItem Item1 = new ListViewItem("");
 
                 Item1.SubItems.Add(Station.Name);
                 Item1.SubItems.Add(Station.To);
-                Item1.SubItems.Add(departureTime);
+                Item1.SubItems.Add(departuretime);
                 StandortsFahrplanListView.Items.Add(Item1);
                 StandortsFahrplanListView.View = View.Details;
             }
